@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WebApplication3.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>My Site</title>
+    <style>
+    body {
+      background-image: url("images/background.jpg");
+    }
+    #Subject{
+        text-align: center;
+        font-size:50px
+    }
+    ul{
+      display: flex;
+      width: 100%;
+      margin: auto;
+      max-width: 1000px;
+      justify-content: space-between;
+      text-align: center;
+      margin-top: -360px;
+    }
+
+    li a{
+      text-decoration: none;
+      color:black;
+    }
+
+    li{
+      padding: 1rem 2rem 1.15rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: #ebebeb;
+      min-width: 80px;
+      margin: auto;
+    }
+
+    li:hover {
+      background-image: url("images/button.png");
+      background-size: 100% 100%;
+      animation: spring 300ms ease-out;
+      font-weight: bold;
+    }
+    li:active {
+      transform: translateY(4px);
+    }
+
+    img {
+      animation: floatUpDown 4s infinite;
+      margin-top: 0px;
+      position: relative;
+      z-index: 0;
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-50px);
+      }
+    }
+
+    @keyframes spring {
+      15% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: scale(1.2, 1.1);
+      }
+      40% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: scale(0.95, 0.95);
+      }
+      75% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: scale(1.05, 1);
+      }
+      100% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: scale(1, 1);
+      }
+    }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div>
+        <img src="images/kaiamoot.jpg"/>
+        <ul>
+          <li><a href="HomePage.aspx">Home</a></li>
+          <li><a href="ElectricCars.aspx">Cars</a></li>
+          <li><a href="CleanEnergies.aspx">Energies</a></li>
+          <li><a href="NaturalResources.aspx">Resources</a></li>
+          <li><a href="PlasticTools.aspx">Plastic Tools</a></li>
+          <li><a href="Login.aspx">Login</a></li>
+        </ul>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>
